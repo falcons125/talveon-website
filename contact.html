@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Talveon AI. Book a free consultation to discuss how AI agents can transform your business.">
+    <title>Contact Us | Talveon AI</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://talveon.com/contact">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23000'/><text x='50%25' y='72%25' text-anchor='middle' font-family='Inter,sans-serif' font-size='22' font-weight='700' fill='%23fff'>T</text></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Us | Talveon AI">
+    <meta property="og:description" content="Get in touch with Talveon AI. Book a free consultation to discuss how AI agents can transform your business.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://talveon.com/contact">
+    <meta property="og:image" content="https://talveon.com/og-image.png">
+    <meta property="og:site_name" content="Talveon AI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us | Talveon AI">
+    <meta name="twitter:description" content="Get in touch with Talveon AI. Book a free consultation to discuss how AI agents can transform your business.">
+    <meta name="twitter:image" content="https://talveon.com/og-image.png">
+
+    <!-- Fonts (non-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics: Add your GA4 Measurement ID below to enable tracking -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a class="logo" href="/">Talveon</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/services">Solutions</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Products <span class="dropdown-arrow">▾</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://gpuhunter.app" target="_blank" rel="noopener noreferrer">AI GPU Hunter ↗</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="active" href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="hero-title">Let's Talk</h1>
+            <p class="hero-subtitle">Ready to see what AI can do for your business? Reach out — we'll get back to you within 24 hours.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="section">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <!-- Contact Form -->
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" style="background-color: var(--white); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <!-- Hidden fields for Netlify -->
+                    <input type="hidden" name="form-name" value="contact">
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                    </p>
+
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Work Email *</label>
+                        <input type="email" id="email" name="email" placeholder="jane@yourcompany.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" placeholder="Your Company" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Your Role</label>
+                        <input type="text" id="role" name="role" placeholder="e.g., CEO, Operations Manager, IT Director">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">What Are You Looking For? *</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select an option...</option>
+                            <option value="agentic-solutions">AI Agent Development</option>
+                            <option value="platform">Talveon GenAI Platform</option>
+                            <option value="data-engine">Talveon Data Engine</option>
+                            <option value="consulting">AI Strategy Consultation</option>
+                            <option value="partnership">Partnership Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Project *</label>
+                        <textarea id="message" name="message" required placeholder="What challenges are you trying to solve? What does success look like for your team?"></textarea>
+                    </div>
+
+                    <button type="submit" class="cta-button" style="width: 100%; cursor: pointer; border: none; font-size: 1rem;">Send Message →</button>
+                </form>
+
+                <!-- Additional Info -->
+                <div style="margin-top: 60px; text-align: center;">
+                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Prefer Email?</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 10px; font-size: 1.1rem;">
+                        <a href="mailto:info@talveon.com" style="color: var(--primary-black); font-weight: 600;">info@talveon.com</a>
+                    </p>
+                    <p style="color: var(--text-gray); font-size: 0.95rem;">
+                        We typically respond within one business day
+                    </p>
+                </div>
+
+                <!-- Business Section -->
+                <div style="margin-top: 60px; background-color: var(--bg-light); padding: 40px; border-radius: 8px;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Growing Teams Welcome</h3>
+                    <p style="color: var(--text-gray); line-height: 1.7; margin-bottom: 15px;">
+                        Whether you're a team of 5 or 500, Talveon works with businesses at every stage. We'll find a solution that fits your scale, timeline, and budget.
+                    </p>
+                    <p style="color: var(--text-gray); line-height: 1.7;">
+                        Book a session with our solutions team to explore what AI can realistically do for your business — no pressure, no jargon.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="https://gpuhunter.app" target="_blank" rel="noopener noreferrer">AI GPU Hunter</a></li>
+                        <li><a href="/services">Talveon GenAI Platform</a></li>
+                        <li><a href="/services">Talveon Data Engine</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About Talveon</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Guides</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="https://linkedin.com/company/talveon" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://x.com/talveon" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Talveon AI, Inc. All rights reserved. | <a href="#" style="color:#666;">Terms of Use</a> &amp; <a href="#" style="color:#666;">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    toggle.closest('.dropdown').classList.toggle('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
