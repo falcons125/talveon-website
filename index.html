@@ -190,7 +190,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Talveon AI, Inc. All rights reserved. | <a href="#" style="color:#666;">Terms of Use</a> &amp; <a href="#" style="color:#666;">Privacy Policy</a>
+                &copy; 2026 Talveon AI, Inc. All rights reserved. | <a href="#" style="color:#666;">Terms of Use</a> &amp; <a href="/privacy-policy" style="color:#666;">Privacy Policy</a>
             </div>
         </div>
     </footer>
@@ -209,11 +209,20 @@
         // Mobile: tap dropdown toggle to open/close
         document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
             toggle.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    toggle.closest('.dropdown').classList.toggle('open');
-                }
+                e.preventDefault();
+                const dropdown = toggle.closest('.dropdown');
+                const isOpen = dropdown.classList.toggle('open');
+                // Close other dropdowns
+                document.querySelectorAll('.dropdown').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('open');
+                });
             });
+        });
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+            }
         });
 
         // Scroll animations
@@ -229,6 +238,30 @@
             el.classList.add('fade-in');
             observer.observe(el);
         });
+    </script>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#111;color:#eee;padding:16px 24px;z-index:9999;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:0.9rem;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+        <p style="margin:0;max-width:700px;line-height:1.6;">We use cookies to analyze site traffic and improve your experience. By clicking "Accept," you consent to our use of cookies. <a href="/privacy-policy" style="color:#fff;text-decoration:underline;">Privacy Policy</a></p>
+        <div style="display:flex;gap:10px;flex-shrink:0;">
+            <button onclick="acceptCookies()" style="background:#fff;color:#111;border:none;padding:8px 20px;border-radius:4px;font-weight:600;cursor:pointer;font-size:0.9rem;">Accept</button>
+            <button onclick="declineCookies()" style="background:transparent;color:#aaa;border:1px solid #444;padding:8px 20px;border-radius:4px;font-weight:600;cursor:pointer;font-size:0.9rem;">Essential Only</button>
+        </div>
+    </div>
+    <script>
+        function acceptCookies() {
+            localStorage.setItem('cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+        function declineCookies() {
+            localStorage.setItem('cookie_consent', 'declined');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+        (function() {
+            var consent = localStorage.getItem('cookie_consent');
+            if (!consent) {
+                document.getElementById('cookie-banner').style.display = 'flex';
+            }
+        })();
     </script>
 </body>
 </html>
