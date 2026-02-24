@@ -13,6 +13,12 @@
     --white: #ffffff;
 }
 
+html {
+    overflow-x: hidden; /* prevent horizontal scroll on mobile */
+    -webkit-text-size-adjust: 100%; /* prevent iOS font scaling on rotation */
+    text-size-adjust: 100%;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -20,6 +26,9 @@ body {
     background-color: var(--white);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-wrap: break-word; /* prevent long words overflowing */
+    word-break: break-word;
 }
 
 .container {
@@ -32,6 +41,7 @@ body {
 .navbar {
     background-color: var(--white);
     border-bottom: 1px solid var(--border-color);
+    position: -webkit-sticky; /* iOS Safari */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -67,6 +77,9 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
+    min-height: 44px; /* minimum touch target */
+    display: flex;
+    align-items: center;
 }
 
 .nav-menu a:hover,
@@ -379,10 +392,27 @@ body {
     padding: 12px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 16px; /* must be 16px+ to prevent iOS auto-zoom */
     font-family: inherit;
     background-color: var(--white);
     transition: border-color 0.2s;
+}
+
+.form-group input,
+.form-group textarea {
+    -webkit-appearance: none; /* consistent cross-browser rendering */
+    appearance: none;
+}
+
+/* Custom select arrow for cross-browser consistency */
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234a4a4a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
 }
 
 .form-group textarea {
@@ -403,6 +433,7 @@ body {
     background: var(--primary-black);
     color: white;
     padding: 80px 0;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom)); /* iOS home bar */
     margin-top: 100px;
 }
 
@@ -551,5 +582,56 @@ body {
 
     .about-section {
         padding: 30px 20px;
+    }
+
+    /* Full-width CTA on small phones */
+    .cta-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 16px 20px;
+    }
+
+    /* Prevent grid minmax overflow */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+/* ─── Responsive: Small Mobile (320px) ──────────────────── */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .section h2 {
+        font-size: 1.75rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.75rem;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .card,
+    .value-card {
+        padding: 20px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ─── iOS Safe Area Support ──────────────────────────────── */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .navbar {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
     }
 }
