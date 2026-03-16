@@ -82,9 +82,31 @@ body {
     align-items: center;
 }
 
-.nav-menu a:hover,
+.nav-menu a:hover {
+    color: var(--primary-black);
+}
+
 .nav-menu a.active {
     color: var(--primary-black);
+    font-weight: 600;
+}
+
+.nav-menu {
+    position: relative;
+}
+
+.nav-indicator {
+    position: absolute;
+    bottom: 4px;
+    height: 2.5px;
+    background: var(--primary-black);
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    transition: left 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+                width 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+                opacity 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* ─── Products Dropdown ──────────────────────────────────── */
@@ -112,7 +134,7 @@ body {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 14px);
+    top: calc(100% + 12px);
     left: 50%;
     transform: translateX(-50%);
     background: var(--white);
@@ -123,6 +145,22 @@ body {
     z-index: 200;
     padding: 8px 0;
     list-style: none;
+}
+
+/* Invisible bridge so mouse can travel from trigger to menu */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 16px;
+    display: none;
+}
+
+.dropdown:hover::after,
+.dropdown.open::after {
+    display: block;
 }
 
 .dropdown:hover .dropdown-menu,
@@ -539,6 +577,15 @@ body {
     .dropdown-toggle {
         justify-content: space-between;
         width: 100%;
+    }
+
+    .nav-indicator {
+        display: none !important;
+    }
+
+    .nav-menu a.active {
+        border-left: 2px solid var(--primary-black);
+        padding-left: 10px;
     }
 
     .hero-title {
