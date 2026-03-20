@@ -1,4 +1,10 @@
-User-agent: *
-Allow: /
+# Talveon AI - robots.txt
+# IMPORTANT: Change Disallow to Allow and uncomment Sitemap after DNS cutover to talveon.com
 
-Sitemap: https://talveon.com/sitemap.xml
+User-agent: *
+Disallow: /
+
+# After DNS cutover, replace the above with:
+# User-agent: *
+# Allow: /
+# Sitemap: https://talveon.com/sitemap.xml

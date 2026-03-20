@@ -19,15 +19,26 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Google Analytics: Add your GA4 Measurement ID below to enable tracking -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics (consent-aware) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-        gtag('event', 'form_submit', { event_category: 'Contact', event_label: 'Contact Form' });
-    </script> -->
+        gtag('consent', 'default', { analytics_storage: 'denied' });
+        function loadGA4() {
+            if (document.querySelector('script[src*="googletagmanager"]')) return;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KY8V36QDVS';
+            document.head.appendChild(s);
+            gtag('js', new Date());
+            gtag('config', 'G-KY8V36QDVS');
+            gtag('event', 'generate_lead', { event_category: 'Contact', event_label: 'Contact Form Submission' });
+        }
+        if (localStorage.getItem('cookie_consent') === 'accepted') {
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+            loadGA4();
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -99,7 +110,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Talveon AI, Inc. All rights reserved. | <a href="#" style="color:#666;">Terms of Use</a> &amp; <a href="/privacy-policy" style="color:#666;">Privacy Policy</a>
+                &copy; 2026 Talveon AI, Inc. All rights reserved. | <a href="/privacy-policy" style="color:#666;">Privacy Policy</a>
             </div>
         </div>
     </footer>
@@ -144,6 +155,8 @@
         function acceptCookies() {
             localStorage.setItem('cookie_consent', 'accepted');
             document.getElementById('cookie-banner').style.display = 'none';
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+            loadGA4();
         }
         function declineCookies() {
             localStorage.setItem('cookie_consent', 'declined');
