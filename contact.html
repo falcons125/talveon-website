@@ -97,17 +97,21 @@
     <header class="hero">
         <div class="container">
             <h1 class="hero-title">Start Your AI Transformation Today</h1>
-            <p class="hero-subtitle">You're one conversation away from unlocking AI that drives real revenue. Share your vision, and we'll architect a custom roadmap to deploy agents that deliver proven results. Every inquiry receives a personal response within 24 hours.</p>
+            <p class="hero-subtitle">Whether you have a question, want to discuss strategy, or simply want to stay updated on what we're building — you're in the right place.</p>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="container">
-        <section class="section">
-            <div style="max-width: 700px; margin: 0 auto;">
-                <!-- Contact Form -->
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" style="background-color: var(--white); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color);">
-                    <!-- Hidden fields for Netlify -->
+
+        <!-- Get in Touch -->
+        <section class="contact-block">
+            <div class="contact-block-header">
+                <h2>Get in Touch</h2>
+                <p>Have a question or want to explore how AI can transform your business? Send us a message and we'll respond within one business day.</p>
+            </div>
+            <div class="contact-form-card">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
                     <input type="hidden" name="form-name" value="contact">
                     <p style="display: none;">
                         <label>Don't fill this out if you're human: <input name="bot-field"></label>
@@ -150,51 +154,47 @@
                         <textarea id="message" name="message" required placeholder="What problems do you need help solving?"></textarea>
                     </div>
 
-                    <button type="submit" class="cta-button" style="width: 100%; cursor: pointer; border: none; font-size: 1rem;">Get Your Free Strategy Assessment →</button>
+                    <button type="submit" class="cta-button" style="width: 100%; cursor: pointer; border: none; font-size: 1rem;">Send Message →</button>
                 </form>
+            </div>
+            <p class="contact-direct-line">Or reach us directly at <a href="mailto:info@talveon.com">info@talveon.com</a></p>
+        </section>
 
-                <!-- Additional Info -->
-                <div style="margin-top: 60px; text-align: center;">
-                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Prefer a Direct Line?</h3>
-                    <p style="color: var(--text-gray); margin-bottom: 10px; font-size: 1.1rem;">
-                        <a href="mailto:info@talveon.com" style="color: var(--primary-black); font-weight: 600;">info@talveon.com</a>
-                    </p>
-                    <p style="color: var(--text-gray); font-size: 0.95rem;">
-                        We respond within one business day, often within hours.
-                    </p>
-                </div>
+        <!-- Book a Consultation -->
+        <section class="contact-block">
+            <div class="contact-block-header">
+                <h2>Book a Consultation</h2>
+                <p>Ready to talk strategy? Pick a time that works — zero obligation, just a clear conversation about what AI can do for your business.</p>
+            </div>
+            <div class="calendly-inline-widget calendly-embed" data-url="https://calendly.com/jnester-talveon/new-meeting?hide_landing_page_details=1&hide_gdpr_banner=1"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </section>
 
-                <!-- Book a Meeting -->
-                <div style="margin-top: 60px;">
-                    <h3 style="margin-bottom: 8px; font-size: 1.5rem; text-align: center;">Ready Now? Lock In Your Free Strategy Session</h3>
-                    <p style="color: var(--text-gray); text-align: center; margin-bottom: 24px;">Pick a time that works. You'll speak directly with an experienced AI consultant. Zero obligation, maximum clarity.</p>
-                    <!-- Calendly inline widget -->
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/jnester-talveon/new-meeting?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:0;width:100%;height:700px;border-radius:8px;overflow:hidden;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                </div>
-
-                <!-- Business Section -->
-                <div style="margin-top: 60px; background-color: var(--bg-light); padding: 40px; border-radius: 8px;">
-                    <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Engineered for Ambitious Teams at Every Scale</h3>
-                    <p style="color: var(--text-gray); line-height: 1.7; margin-bottom: 15px;">
-                        Whether you're a team of 5 or 500+, Talveon architects AI solutions that match your scale, timeline, and budget. No project is too complex, and no question is too early. We've deployed production AI across industries, and we're ready to do the same for you.
+        <!-- Stay in the Know -->
+        <section class="contact-block">
+            <div class="contact-block-header">
+                <h2>Stay in the Know</h2>
+                <p>Be the first to hear about new AI solutions, product launches, and updates from Talveon.</p>
+            </div>
+            <div class="signup-form-wrapper">
+                <form id="signup-form" name="email-signup" method="POST" data-netlify="true" netlify-honeypot="signup-bot-field" class="signup-form">
+                    <input type="hidden" name="form-name" value="email-signup">
+                    <p style="display: none;">
+                        <label>Don't fill this out: <input name="signup-bot-field"></label>
                     </p>
-                    <p style="color: var(--text-gray); line-height: 1.7;">
-                        Claim your free strategy session and discover exactly how intelligent agents can transform your operations. No pressure, no jargon, no obligation. Just a clear roadmap to concrete results.
-                    </p>
+                    <div class="signup-form-row">
+                        <input type="email" id="signup-email" name="signup-email" placeholder="Your email address" required aria-label="Email address">
+                        <button type="submit">Get Updates</button>
+                    </div>
+                    <p id="signup-error" class="signup-error" style="display: none;"></p>
+                </form>
+                <div id="signup-success" class="signup-success" style="display: none;">
+                    <p>✓ You're on the list. We'll keep you posted.</p>
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <h2>Stay in the Loop</h2>
-            <p>Get updates on our latest AI solutions, product launches, and industry insights.</p>
-            <div class="ml-embedded" data-form="clRkK0"></div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -276,6 +276,63 @@
                 document.getElementById('cookie-banner').style.display = 'flex';
             }
         })();
+    </script>
+    <script>
+    // Email signup form — inline submission via Netlify Forms
+    (function() {
+        var form = document.getElementById('signup-form');
+        if (!form) return;
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var emailInput = document.getElementById('signup-email');
+            var email = emailInput.value.trim();
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var errorEl = document.getElementById('signup-error');
+            var successEl = document.getElementById('signup-success');
+
+            // Clear previous errors
+            errorEl.style.display = 'none';
+            errorEl.textContent = '';
+
+            // Validate email
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errorEl.textContent = 'Please enter a valid email address.';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            // Disable button, show loading
+            submitBtn.disabled = true;
+            var originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+
+            // Submit to Netlify Forms
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    'form-name': 'email-signup',
+                    'signup-email': email
+                }).toString()
+            }).then(function(response) {
+                if (!response.ok) throw new Error('Network response was not ok');
+                // Fade out form, show confirmation
+                form.classList.add('fade-out');
+                setTimeout(function() {
+                    form.style.display = 'none';
+                    successEl.style.display = 'block';
+                    successEl.classList.add('show');
+                }, 300);
+            }).catch(function() {
+                errorEl.textContent = 'Something went wrong. Please try again or email us at info@talveon.com.';
+                errorEl.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            });
+        });
+    })();
     </script>
     <script>
     // Animated nav indicator
