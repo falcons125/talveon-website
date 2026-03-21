@@ -55,6 +55,22 @@
             loadGA4();
         }
     </script>
+
+    <!-- MailerLite Universal (consent-aware) -->
+    <script>
+        function loadMailerLite() {
+            if (window.mlLoaded) return;
+            window.mlLoaded = true;
+            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+            ml('account', '2209869');
+        }
+        if (localStorage.getItem('cookie_consent') === 'accepted') {
+            loadMailerLite();
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -171,6 +187,15 @@
         </section>
     </main>
 
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Stay in the Loop</h2>
+            <p>Get updates on our latest AI solutions, product launches, and industry insights.</p>
+            <div class="ml-embedded" data-form="clRkK0"></div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -239,6 +264,7 @@
             document.getElementById('cookie-banner').style.display = 'none';
             gtag('consent', 'update', { analytics_storage: 'granted' });
             loadGA4();
+            loadMailerLite();
         }
         function declineCookies() {
             localStorage.setItem('cookie_consent', 'declined');
