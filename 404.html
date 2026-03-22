@@ -14,46 +14,9 @@
     <!-- Fonts (non-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=block" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Google Analytics (consent-aware) -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('consent', 'default', { analytics_storage: 'denied' });
-        function loadGA4() {
-            if (document.querySelector('script[src*="googletagmanager"]')) return;
-            var s = document.createElement('script');
-            s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KY8V36QDVS';
-            document.head.appendChild(s);
-            gtag('js', new Date());
-            gtag('config', 'G-KY8V36QDVS');
-        }
-        if (localStorage.getItem('cookie_consent') === 'accepted') {
-            gtag('consent', 'update', { analytics_storage: 'granted' });
-            loadGA4();
-        }
-    </script>
-
-    <!-- MailerLite Universal (consent-aware) -->
-    <script>
-        function loadMailerLite() {
-            if (window.mlLoaded) return;
-            window.mlLoaded = true;
-            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-            ml('account', '2209869');
-        }
-        if (localStorage.getItem('cookie_consent') === 'accepted') {
-            loadMailerLite();
-        }
-    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -69,7 +32,6 @@
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
-                    <li><a href="/services">Solutions</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
@@ -92,25 +54,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="/about">About Talveon</a></li>
-                        <li><a href="/services">Solutions</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Social</h4>
-                    <ul>
-                        <li><span style="color:#ccc;">LinkedIn</span> <span style="color:#555;font-size:0.8em;">(coming soon)</span></li>
-                        <li><span style="color:#ccc;">Twitter / X</span> <span style="color:#555;font-size:0.8em;">(coming soon)</span></li>
-                    </ul>
-                </div>
+            <div class="footer-nav">
+                <a href="/" style="color:#ccc;">Home</a>
+                <a href="/about" style="color:#ccc;">About</a>
+                <a href="/contact" style="color:#ccc;">Contact</a>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Talveon AI, Inc. All rights reserved. | <a href="/privacy-policy" style="color:#666;">Privacy Policy</a> | <a href="/terms-of-use" style="color:#666;">Terms of Use</a>
+                &copy; 2026 Talveon, LLC All rights reserved. | <a href="/privacy-policy" style="color:#666;">Privacy Policy</a>
             </div>
         </div>
     </footer>
@@ -155,9 +105,6 @@
         function acceptCookies() {
             localStorage.setItem('cookie_consent', 'accepted');
             document.getElementById('cookie-banner').style.display = 'none';
-            gtag('consent', 'update', { analytics_storage: 'granted' });
-            loadGA4();
-            loadMailerLite();
         }
         function declineCookies() {
             localStorage.setItem('cookie_consent', 'declined');
@@ -238,10 +185,8 @@
             var href = link.getAttribute('href');
             if (!href || href === '#') return;
 
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
+            link.addEventListener('click', function() {
                 moveIndicator(link, true);
-                setTimeout(function() { window.location.href = href; }, 400);
             });
         });
 

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <meta name="color-scheme" content="light">
-    <meta name="description" content="Learn about Talveon's mission to make AI accessible and actionable for businesses of every size.">
-    <title>About Us | Talveon AI</title>
+    <meta name="description" content="Meet the Talveon AI team. We build and deploy custom AI agents that automate workflows, cut costs, and scale operations for growing businesses.">
+    <title>About Talveon AI | Custom AI Solutions Team</title>
 
     <!-- Canonical -->
     <link rel="canonical" href="https://talveon.com/about">
@@ -15,8 +15,8 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23000'/><text x='50%25' y='72%25' text-anchor='middle' font-family='Inter,sans-serif' font-size='22' font-weight='700' fill='%23fff'>T</text></svg>">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="About Us | Talveon AI">
-    <meta property="og:description" content="Learn about Talveon's mission to make AI accessible and actionable for businesses of every size.">
+    <meta property="og:title" content="About Talveon AI | Custom AI Solutions Team">
+    <meta property="og:description" content="Meet the Talveon AI team. We build and deploy custom AI agents that automate workflows, cut costs, and scale operations for growing businesses.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://talveon.com/about">
     <meta property="og:image" content="https://talveon.com/og-image.png">
@@ -24,52 +24,45 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About Us | Talveon AI">
-    <meta name="twitter:description" content="Learn about Talveon's mission to make AI accessible and actionable for businesses of every size.">
+    <meta name="twitter:title" content="About Talveon AI | Custom AI Solutions Team">
+    <meta name="twitter:description" content="Meet the Talveon AI team. We build and deploy custom AI agents that automate workflows, cut costs, and scale operations for growing businesses.">
     <meta name="twitter:image" content="https://talveon.com/og-image.png">
 
     <!-- Fonts (non-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=block" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Google Analytics (consent-aware) -->
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Talveon AI | Custom AI Solutions Team",
+        "description": "Meet the Talveon AI team. We build and deploy custom AI agents that automate workflows, cut costs, and scale operations for growing businesses.",
+        "url": "https://talveon.com/about",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Talveon AI",
+            "url": "https://talveon.com"
+        },
+        "about": {
+            "@type": "Organization",
+            "name": "Talveon AI",
+            "url": "https://talveon.com"
+        }
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY8V36QDVS"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('consent', 'default', { analytics_storage: 'denied' });
-        function loadGA4() {
-            if (document.querySelector('script[src*="googletagmanager"]')) return;
-            var s = document.createElement('script');
-            s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KY8V36QDVS';
-            document.head.appendChild(s);
-            gtag('js', new Date());
-            gtag('config', 'G-KY8V36QDVS');
-        }
-        if (localStorage.getItem('cookie_consent') === 'accepted') {
-            gtag('consent', 'update', { analytics_storage: 'granted' });
-            loadGA4();
-        }
-    </script>
-
-    <!-- MailerLite Universal (consent-aware) -->
-    <script>
-        function loadMailerLite() {
-            if (window.mlLoaded) return;
-            window.mlLoaded = true;
-            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-            ml('account', '2209869');
-        }
-        if (localStorage.getItem('cookie_consent') === 'accepted') {
-            loadMailerLite();
-        }
+        gtag('js', new Date());
+        gtag('config', 'G-KY8V36QDVS');
     </script>
 </head>
 <body>
@@ -86,7 +79,6 @@
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="/">Home</a></li>
                     <li><a class="active" href="/about">About</a></li>
-                    <li><a href="/services">Solutions</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
@@ -94,8 +86,9 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
+    <header class="hero hero-about" id="hero">
+        <div class="hero-glow" id="hero-glow"></div>
+        <div class="container" style="position: relative; z-index: 1;">
             <h1 class="hero-title">The Team Behind Your<br>AI Advantage</h1>
             <p class="hero-subtitle">We don't just build AI. We engineer autonomous systems that give your business an unfair competitive edge.</p>
         </div>
@@ -105,9 +98,9 @@
     <main class="container">
         <!-- Mission Section -->
         <section class="about-section">
-            <h2>Our Mission</h2>
-            <p>We started Talveon because we kept seeing the same thing: businesses spending six figures on AI consultants and walking away with a PDF and a prototype that never shipped. That's not a transformation. It's a tax.</p>
-            <p>Our mission is to make production-grade AI agents accessible to every ambitious business, not just companies with unlimited R&amp;D budgets. We handle the hard engineering so you can focus on what you do best: running your business.</p>
+            <h2>Who We Are</h2>
+            <p>You don't need someone to tell you AI is important. You need someone who understands your business, identifies the problems worth solving first, and builds AI solutions that deliver results fast.</p>
+            <p>That's Talveon. Tell us what's slowing you down, and we'll show you what's possible.</p>
         </section>
 
         <!-- Core Values -->
@@ -124,7 +117,7 @@
                 </div>
                 <div class="card">
                     <h3>Compounding Intelligence</h3>
-                    <p>The AI we build for you today is the dumbest it will ever be. Every interaction, every dataset, every edge case makes it sharper. Your investment grows. It never depreciates.</p>
+                    <p>AI that gets smarter every day. Every interaction, every dataset, every edge case makes it sharper. Your investment grows. It never depreciates.</p>
                 </div>
             </div>
         </section>
@@ -132,12 +125,10 @@
         <!-- Expertise Section -->
         <section class="section">
             <h2>What Sets Our Team Apart</h2>
-            <p class="section-intro">We hire engineers who've built and shipped, not just studied and theorized. Here's what that means for your project.</p>
-
             <div class="grid">
                 <div class="value-card">
-                    <h4>Builders, Not Advisors</h4>
-                    <p>We ship production AI systems, not just research them. When we join your project, we write code, review pull requests, and own outcomes alongside your team.</p>
+                    <h4>Your AI Partner</h4>
+                    <p>We ship production AI systems. When we join your project, we write code, review pull requests, and own outcomes alongside your team.</p>
                 </div>
                 <div class="value-card">
                     <h4>Research-Driven, Business-Grounded</h4>
@@ -153,7 +144,7 @@
         <!-- CTA -->
         <section class="section" style="text-align: center; padding-top: 40px;">
             <h2>Ready to Outpace Your Competition?</h2>
-            <p style="color: var(--text-gray); font-size: 1.1rem; margin: 20px 0 30px;">Discover exactly how Talveon can accelerate your AI initiatives in a free, no-obligation strategy session with our team.</p>
+            <p style="color: var(--text-gray); font-size: 1.1rem; margin: 20px 0 30px;">Discover exactly how Talveon can accelerate your AI initiatives in a free, no-obligation strategy session.</p>
             <a class="cta-button" href="https://calendly.com/jnester-talveon/new-meeting" target="_blank" rel="noopener noreferrer">Claim Your Free Strategy Session →</a>
         </section>
     </main>
@@ -161,25 +152,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="/about">About Talveon</a></li>
-                        <li><a href="/services">Solutions</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Social</h4>
-                    <ul>
-                        <li><span style="color:#ccc;">LinkedIn</span> <span style="color:#555;font-size:0.8em;">(coming soon)</span></li>
-                        <li><span style="color:#ccc;">Twitter / X</span> <span style="color:#555;font-size:0.8em;">(coming soon)</span></li>
-                    </ul>
-                </div>
+            <div class="footer-nav">
+                <a href="/" style="color:#ccc;">Home</a>
+                <a href="/about" style="color:#ccc;">About</a>
+                <a href="/contact" style="color:#ccc;">Contact</a>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Talveon AI, Inc. All rights reserved. | <a href="/privacy-policy" style="color:#666;">Privacy Policy</a> | <a href="/terms-of-use" style="color:#666;">Terms of Use</a>
+                &copy; 2026 Talveon, LLC All rights reserved. | <a href="/privacy-policy" style="color:#666;">Privacy Policy</a>
             </div>
         </div>
     </footer>
@@ -235,9 +214,6 @@
         function acceptCookies() {
             localStorage.setItem('cookie_consent', 'accepted');
             document.getElementById('cookie-banner').style.display = 'none';
-            gtag('consent', 'update', { analytics_storage: 'granted' });
-            loadGA4();
-            loadMailerLite();
         }
         function declineCookies() {
             localStorage.setItem('cookie_consent', 'declined');
@@ -318,10 +294,8 @@
             var href = link.getAttribute('href');
             if (!href || href === '#') return;
 
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
+            link.addEventListener('click', function() {
                 moveIndicator(link, true);
-                setTimeout(function() { window.location.href = href; }, 400);
             });
         });
 
@@ -344,6 +318,33 @@
                 if (activeLink) moveIndicator(activeLink, false);
             }
         });
+    })();
+    </script>
+    <script>
+    (function() {
+        var hero = document.getElementById('hero');
+        var glow = document.getElementById('hero-glow');
+        if (hero && glow) {
+            hero.addEventListener('mousemove', function(e) {
+                var rect = hero.getBoundingClientRect();
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+                var cx = rect.width / 2;
+                var cy = rect.height / 2;
+                var dx = (x - cx) / cx;
+                var dy = (y - cy) / cy;
+                var dist = Math.sqrt(dx * dx + dy * dy);
+                var scale = Math.max(0.82, 1 - dist * 0.25);
+                glow.style.left = x + 'px';
+                glow.style.top = y + 'px';
+                glow.style.width = (700 * scale) + 'px';
+                glow.style.height = (700 * scale) + 'px';
+                glow.style.opacity = '1';
+            });
+            hero.addEventListener('mouseleave', function() {
+                glow.style.opacity = '0';
+            });
+        }
     })();
     </script>
 </body>
