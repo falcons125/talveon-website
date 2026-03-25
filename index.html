@@ -161,7 +161,6 @@
 
     <!-- Hero Section -->
     <header class="hero" id="hero">
-        <div class="hero-glow" id="hero-glow"></div>
         <div class="container" style="position: relative; z-index: 1;">
             <h1 class="hero-title">AI Solutions That Drive Revenue,<br>Cut Costs &amp; Scale Your Business</h1>
             <p class="hero-subtitle">Deploy intelligent AI solutions that master your workflows, eliminate bottlenecks, and deliver measurable ROI in weeks, not months.</p>
@@ -398,30 +397,7 @@
             });
         });
 
-        // Hero glow mouse follow with edge-responsive sizing
-        var hero = document.getElementById('hero');
-        var glow = document.getElementById('hero-glow');
-        if (hero && glow) {
-            hero.addEventListener('mousemove', function(e) {
-                var rect = hero.getBoundingClientRect();
-                var x = e.clientX - rect.left;
-                var y = e.clientY - rect.top;
-                var cx = rect.width / 2;
-                var cy = rect.height / 2;
-                var dx = (x - cx) / cx;
-                var dy = (y - cy) / cy;
-                var dist = Math.sqrt(dx * dx + dy * dy);
-                var scale = Math.max(0.82, 1 - dist * 0.25);
-                glow.style.left = x + 'px';
-                glow.style.top = y + 'px';
-                glow.style.width = (700 * scale) + 'px';
-                glow.style.height = (700 * scale) + 'px';
-                glow.style.opacity = '1';
-            });
-            hero.addEventListener('mouseleave', function() {
-                glow.style.opacity = '0';
-            });
-        }
+
 
         // Recalculate after fonts load (prevents misalignment)
         if (document.fonts && document.fonts.ready) {
