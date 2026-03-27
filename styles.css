@@ -646,6 +646,16 @@ body {
         grid-template-columns: 1fr;
     }
 
+    /* Disable scroll animations on mobile — IntersectionObserver unreliable */
+    .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
     }

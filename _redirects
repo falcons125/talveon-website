@@ -1,0 +1,5 @@
+# Clean URL rewrites — serve .html files at clean paths
+/about          /about.html          200
+/contact        /contact.html        200
+/privacy-policy /privacy-policy.html 200
+/thank-you      /thank-you.html      200
